@@ -1,0 +1,138 @@
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --apricot-cream: #ebcaa1;
+  --sandy-clay: #dab089;
+  --light-bronze: #cd9b76;
+  --reddish-brown: #98472b;
+  --dark-garnet: #641600;
+  --bg-obsidian: #0c0503;
+  --bg-surface: #140906;
+  --bg-elevated: #1e0e09;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-obsidian);
+    color: #f6ede1;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--bg-obsidian);
+  }
+}
+
+/* Custom MapLibre GL dark garnet & bronze theme overrides */
+.maplibregl-ctrl-group {
+  background: rgba(20, 9, 6, 0.9) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(205, 155, 118, 0.28) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55) !important;
+}
+
+.maplibregl-ctrl-group button {
+  color: #ebcaa1 !important;
+  border-color: rgba(205, 155, 118, 0.16) !important;
+}
+
+.maplibregl-ctrl-group button:hover {
+  background-color: rgba(152, 71, 43, 0.25) !important;
+}
+
+.maplibregl-ctrl-icon {
+  filter: invert(0.9) sepia(0.35) saturate(1.4) hue-rotate(340deg);
+}
+
+.maplibregl-ctrl-scale {
+  background: rgba(20, 9, 6, 0.88) !important;
+  border-color: rgba(235, 202, 161, 0.7) !important;
+  color: #ebcaa1 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10px !important;
+  padding: 2px 6px !important;
+  backdrop-filter: blur(8px);
+}
+
+.maplibregl-ctrl-attrib {
+  background: rgba(12, 5, 3, 0.85) !important;
+  color: #dab089 !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(8px);
+}
+
+.maplibregl-ctrl-attrib a {
+  color: #ebcaa1 !important;
+}
+
+.maplibregl-popup-content {
+  background: rgba(20, 9, 6, 0.96) !important;
+  color: #f6ede1 !important;
+  border: 1px solid rgba(205, 155, 118, 0.42) !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(12px);
+}
+
+.maplibregl-popup-tip {
+  border-top-color: rgba(20, 9, 6, 0.96) !important;
+}
+
+.maplibregl-popup-close-button {
+  color: #dab089 !important;
+  font-size: 16px !important;
+  padding: 4px 8px !important;
+}
+
+.maplibregl-popup-close-button:hover {
+  color: #ebcaa1 !important;
+  background: transparent !important;
+}
+
+/* Subtle custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #120705;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #461709;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #98472b;
+}
+
+/* Luminous glassmorphic GIS panels */
+.gis-glass {
+  background: rgba(20, 9, 6, 0.86);
+  backdrop-filter: blur(18px) saturate(135%);
+  border: 1px solid rgba(205, 155, 118, 0.22);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(235, 202, 161, 0.08);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+.gis-glass:hover {
+  border-color: rgba(235, 202, 161, 0.42);
+  box-shadow:
+    0 24px 56px rgba(0, 0, 0, 0.7),
+    0 0 28px rgba(152, 71, 43, 0.22),
+    inset 0 1px 0 rgba(235, 202, 161, 0.14);
+}
